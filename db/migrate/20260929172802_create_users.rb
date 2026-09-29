@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[8.1]
       t.string :full_name
       t.string :email
       t.string :password_digest
+      t.string :location
       t.text :bio
       t.datetime :confirmed_at
       t.string :confirmation_token

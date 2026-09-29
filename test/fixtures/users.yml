@@ -4,14 +4,16 @@ one:
   full_name: MyString
   email: MyString
   password_digest: MyString
+  location: MyString
   bio: MyText
-  confirmed_at: 2026-09-28 18:44:47
+  confirmed_at: 2026-09-29 14:28:02
   confirmation_token: MyString
 
 two:
   full_name: MyString
   email: MyString
   password_digest: MyString
+  location: MyString
   bio: MyText
-  confirmed_at: 2026-09-28 18:44:47
+  confirmed_at: 2026-09-29 14:28:02
   confirmation_token: MyString

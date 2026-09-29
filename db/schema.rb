@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_28_214447) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_29_172802) do
   create_table "rooms", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -23,6 +23,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_28_214447) do
     t.string "full_name"
     t.string "email"
     t.string "password_digest"
+    t.string "location"
     t.text "bio"
     t.datetime "confirmed_at"
     t.string "confirmation_token"
