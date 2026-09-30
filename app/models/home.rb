@@ -1,4 +1,4 @@
-class Room < ApplicationRecord
+class Home < ApplicationRecord
   def complete_name
     "#{title}, #{location}"
   end
