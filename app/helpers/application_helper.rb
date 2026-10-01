@@ -4,7 +4,7 @@ module ApplicationHelper
       content_tag(
         :div,
         model.errors[attribute].first,
-        class: 'error_message'
+        class: "error_message"
       )
     end
   end

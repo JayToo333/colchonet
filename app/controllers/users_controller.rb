@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def user_params
