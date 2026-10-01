@@ -1,0 +1,9 @@
+<h1>Quarto: <%= @room.complete_name %></h1>
+
+<ul>
+    <li>Localização: <%= @room.location %></li>
+    <li>Descrição: <%= @room.description %></li>
+</ul>
+
+<%= link_to 'Editar Quarto', edit_room_path(@room) %>
+<%= link_to 'Home', root_path %>

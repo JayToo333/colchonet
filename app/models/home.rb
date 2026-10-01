@@ -3,3 +3,4 @@ class Home < ApplicationRecord
     "#{title}, #{location}"
   end
 end
+
