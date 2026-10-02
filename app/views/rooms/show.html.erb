@@ -1,9 +1,9 @@
-<h1>Quarto: <%= @room.complete_name %></h1>
+<h1><%= t("rooms.show.title") %>: <%= @room.complete_name %></h1>
 
 <ul>
-    <li>Localização: <%= @room.location %></li>
-    <li>Descrição: <%= @room.description %></li>
+    <li><%= t("rooms.show.location") %>: <%= @room.location %></li>
+    <li><%= t("rooms.show.description") %>: <%= @room.description %></li>
 </ul>
 
-<%= link_to 'Editar Quarto', edit_room_path(@room) %>
-<%= link_to 'Home', root_path %>
+<%= link_to t("rooms.show.edit"), edit_room_path(@room) %>
+<%= link_to t("links.back"), root_path %>

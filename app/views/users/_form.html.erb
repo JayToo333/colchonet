@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
     <div id="error_explanation">
-        Há erros no formulário, por favor verifique.
+        <%= t("general.form_error") %>
     </div>
 <% end %>
 
@@ -42,7 +42,7 @@
     </p>
 
     <p>
-        <%= f.submit %>
+        <%= f.submit t("users._form.submit") %>
     </p>
 <% end %>
 

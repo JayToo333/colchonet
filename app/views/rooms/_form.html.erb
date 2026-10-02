@@ -15,13 +15,13 @@
     </p>
 
     <p>
-        <%= f.submit %>
+        <%= f.submit t("rooms._form.submit") %>
     </p>
 <% end %>
 
 <% if @room.errors.any? %>
   <div id="error_explanation">
-    <h2>Infelizmente não foi possível completar a ação:</h2>
+    <h2><%= t("rooms._form.error") %>:</h2>
     <ul>
       <% @room.errors.full_messages.each do |message| %>
         <li><%= message %></li>

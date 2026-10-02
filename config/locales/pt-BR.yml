@@ -1,0 +1,78 @@
+pt-BR:
+  users:
+    new:
+      title: "Cadastro"
+
+    edit:
+      title: "Editar"
+      submit: "Enviar"
+
+    show:
+      title: "Perfil"
+      location: "Localização"
+      bio: "Bio"
+      edit: "Editar"
+
+    _form:
+      submit: "Enviar"
+
+  rooms:
+    new:
+      title: "Criar Quarto"
+
+
+    edit:
+      title: "Editar"
+      submit: "Enviar"
+
+    show:
+      title: "Quarto"
+      location: "Localização"
+      description: "Descrição"
+      edit: "Editar"
+
+    _form:
+      submit: "Criar"
+
+    index:
+      title: "Quartos"
+
+  home:
+    title: "Bem-vindo ao Colcho.net"
+    subtitle: "Quartos recém postados:"
+
+  activerecord:
+    models:
+      user: "Usuário"
+      room: "Quarto"
+
+    attributes:
+      user:
+        bio: "Bio"
+        email: "E-mail"
+        full_name: "Nome completo"
+        location: "Localização"
+        password: "Senha"
+        password_confirmation: "Confirme sua senha"
+
+      room:
+        description: "Descrição"
+        location: "Localização"
+        title: "Título"
+
+  links:
+    back: "Voltar"
+
+  general:
+    form_error: "Há erros no formulário, por favor verifique."
+
+  layout:
+    signup: "Cadastro"
+    create_room: "Criar Quartos"
+    rooms: "Quartos"
+
+  errors:
+    messages:
+      blank: "não pode ficar em branco"
+      too_short: "deve ter pelo menos %{count} caracteres"
+
