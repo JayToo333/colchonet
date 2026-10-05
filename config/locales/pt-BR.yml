@@ -8,9 +8,10 @@ pt-BR:
       submit: "Enviar"
 
     show:
-      title: "Perfil"
-      location: "Localização"
-      bio: "Bio"
+      title: "Perfil: %{user_name}"
+      location: "Localização: %{localization}"
+      bio: "Bio: %{bio}"
+      email: "E-mail: %{email}"
       edit: "Editar"
 
     _form:
