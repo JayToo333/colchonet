@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  get "/:locale", to: "home#index", locale: LOCALES
+  get ":locale", to: "home#index", locale: LOCALES
 
   root "home#index"
 end
