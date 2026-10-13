@@ -22,4 +22,13 @@ class User < ApplicationRecord
   def confirmed?
     confirmed_at.present?
   end
+
+  def self.authenticate(email, password)
+    user = confirmed.find_by(email: email)
+    if user.present?
+      user.authenticate(password)
+    end
+  end
+
+  scope :confirmed, -> { where.not(confirmed_at: nil) }
 end

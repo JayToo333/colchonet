@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to @room, notice: "Quarto criado com sucesso!"
+      redirect_to @room, notice: t("flash.create.rooms")
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
-      redirect_to @room, notice: "Quarto atualizado com sucesso!"
+      redirect_to @room, notice: t("flash.update.rooms")
     else
       render :edit, status: :unprocessable_entity
     end

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       SignupMailer.confirm_email(@user).deliver
-      redirect_to @user, notice: "Cadastro criado com sucesso!"
+      redirect_to @user, notice: t("flash.create.users")
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user, notice: "Cadastro atualizado com sucesso!"
+      redirect_to @user, notice: t("flash.update.users")
     else
       render :edit, status: :unprocessable_entity
     end
