@@ -77,7 +77,7 @@ pt-BR:
       blank: "não pode ficar em branco"
       too_short: "deve ter pelo menos %{count} caracteres"
 
-  signup:
+  signup_mailer:
     confirm_email:
       subject: "Colcho.net - Confirme seu email"
       title: "Seja bem vindo ao Colcho.net!"

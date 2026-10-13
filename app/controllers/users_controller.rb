@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      SignupMailer.confirm_email(@user).deliver
       redirect_to @user, notice: "Cadastro criado com sucesso!"
     else
       render :new, status: :unprocessable_entity
@@ -32,8 +33,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
-      :full_name, :email, :location, :password, :password_confirmation, :bio
-    )
+    params.require(:user).permit(:full_name, :email, :location, :password, :password_confirmation, :bio)
   end
 end
