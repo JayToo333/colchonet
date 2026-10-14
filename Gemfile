@@ -79,3 +79,5 @@ gem "rmagick"
 gem "pg"
 
 gem "mini_magick"
+
+gem "ruby-vips"
