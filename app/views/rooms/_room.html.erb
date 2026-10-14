@@ -1,0 +1,41 @@
+<article class="room">
+  <h2><%= link_to highlight(room.title, @search_query), room.route %></h2>
+
+  <%= render partial: "review"  , object: @user_review %>
+
+  <span class="created">
+    <%= t("rooms.room.owner_html",
+          owner: room.user.full_name,
+          when: l(room.created_at, format: :short)) %>
+  </span>
+
+
+  <div class="room-description">
+    <%= link_to(
+        image_tag(room.thumb_url),
+        room.picture_url
+      ) if room.has_picture? %>
+    
+    <p><%= highlight(room.description || '', @search_query) %> </p>
+  </div>
+
+  <p class="location">
+    <%= link_to highlight(room.location, @search_query),
+            "https://maps.google.com/?q=#{ERB::Util.url_encode(room.location)}",
+            target: "_blank",
+            rel: "noopener noreferrer" %>
+  </p>
+
+  <p><%= highlight(room.description || '', @search_query) %> </p>
+
+  <% if belongs_to_user(room) %>
+    <ul class="room-actions">
+      <li><%= link_to t(".edit"), edit_room_path(room) %></li>
+      <li><%= link_to t(".destroy"), room_path(room),
+                      data: {
+                        turbo_method: :delete,
+                        turbo_confirm: t("dialogs.destroy")
+                      } %></li>
+    </ul>
+  <% end %>
+</article>

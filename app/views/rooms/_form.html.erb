@@ -15,6 +15,14 @@
     </p>
 
     <p>
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
+      <%= error_tag @room, :picture %>
+    </p>
+    
+    <div class="actions">
+      
+    <p>
         <%= f.submit t("rooms._form.submit") %>
     </p>
 <% end %>

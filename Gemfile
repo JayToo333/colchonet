@@ -67,3 +67,13 @@ group :test do
 end
 
 gem "dartsass-rails", "~> 0.5.1"
+
+gem "friendly_id", github: "FriendlyId/friendly_id", branch: "master"
+
+gem "kaminari"
+
+gem "carrierwave"
+
+gem "rmagick"
+
+gem "pg"

@@ -1,14 +1,23 @@
 class RoomsController < ApplicationController
+  PER_PAGE = 10
+
+  before_action :require_authentication,
+    only: [ :new, :edit, :create, :update, :destroy ]
+
   def index
-    @rooms = Room.all
+   @search_query = params[:q]
+    rooms = Room.search(@search_query).
+      page(params[:page]).
+      per(PER_PAGE)
+      @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
   end
 
   def new
-    @room = Room.new
+    @room = current_user.rooms.build
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.build(room_params)
     if @room.save
       redirect_to @room, notice: t("flash.create.rooms")
     else
@@ -17,15 +26,16 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
+    room_model = Room.friendly.find(params[:id])
+    @room = RoomPresenter.new(room_model, self)
   end
 
   def edit
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
   end
 
   def update
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
     if @room.update(room_params)
       redirect_to @room, notice: t("flash.update.rooms")
     else
@@ -33,9 +43,21 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room = current_user.rooms.find(params[:id])
+    @room.destroy
+
+    redirect_to rooms_url
+  end
+
+  if user_signed_in?
+    @user_review = @room.reviews.
+      find_or_initialize_by(user_id: current_user.id)
+  end
+
   private
 
   def room_params
-    params.require(:room).permit(:title, :location, :description)
+    params.require(:room).permit(:title, :location, :description, :picture)
   end
 end

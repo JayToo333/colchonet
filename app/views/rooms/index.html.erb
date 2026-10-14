@@ -1,7 +1,11 @@
-<h1><%= t(".title") %></h1>
+<%= render 'search' %>
+<%= render @rooms %>
+<%= paginate @rooms %>
 
-<ul>
-  <% @rooms.each do |room| %>
-    <li><%= link_to room.complete_name, room %></li>
-  <% end %>
-</ul>
+<h1>
+<% if @search_query.present? %>
+<%= t '.search_results' %>
+<% else %>
+<%= t '.title' %>
+<% end %>
+</h1>

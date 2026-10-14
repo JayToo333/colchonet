@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
 
+  has_many :rooms, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+
   has_secure_password
 
   validates :full_name, :email, :location, presence: true

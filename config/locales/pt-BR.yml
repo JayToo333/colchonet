@@ -36,7 +36,24 @@ pt-BR:
       submit: "Criar"
 
     index:
-      title: "Quartos"
+      title: "Quartos disponíveis"
+      search_results: "Resultados da busca"
+
+    search:
+      search_for: 'Buscar por...'
+
+    room:
+      owner_html: "&mdash; %{owner} (%{when})"
+      edit: "Editar"
+      destroy: "Remover"
+
+    review_form:
+      login_to_review: 'Faça o login para avaliar quartos'
+    
+    review:
+      stats:
+        one: '(1 avaliação)'
+        other: '(%{count} avaliações)'
 
   home:
     title: "Bem-vindo ao Colcho.net"
@@ -60,6 +77,7 @@ pt-BR:
         description: "Descrição"
         location: "Localização"
         title: "Título"
+        picture: Foto
 
   activemodel:
     attributes:
@@ -81,6 +99,10 @@ pt-BR:
     signup: "Cadastro"
     create_room: "Criar Quartos"
     rooms: "Quartos"
+    signup: Cadastro
+    signin: Login
+    my_profile: Meu perfil
+    signout: Logout
 
   errors:
     messages:
@@ -111,6 +133,10 @@ pt-BR:
   flash:
     notice:
       user_sessions: "Você entrou com sucesso!"
+      needs_login: "Você precisa fazer login"
+      signed_in: "Login efetuado com sucesso!"
+      signed_out: "Logout efetuado com sucesso. Até logo!"
+      already_logged_in: "Você já está logado."
 
     create:
       users: "Usuário criado com sucesso!"
@@ -122,5 +148,26 @@ pt-BR:
 
     show:
       confirmations: "Seu email foi confirmado com sucesso!"
+
+    alert:
+      already_logged_in: "Você já está logado"
+      needs_login: "Você precisa estar logado para continuar"
+
+    dialogs:
+      destroy: "Você tem certeza que quer remover?"
+
+  time:
+    formats:
+      default: ! "%A, %d de %B de %Y, %H:%M h"
+      long: ! "%A, %d de %B de %Y, %H:%M h"
+      short: ! "%d/%m, %H:%M h"
+
+    views:
+      pagination:
+        first: "&laquo; Primeira"
+        last: "Última &raquo;"
+        previous: "&lsaquo; Anterior"
+        next: "Próxima &rsaquo;"
+        truncate: "..."
 
 
