@@ -1,5 +1,12 @@
 @import "shadow";
 
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fontawesome-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .room {
     background-color: white;
     padding: 20px 25px;
@@ -29,51 +36,48 @@
 }
 
 #content .review {
-margin: 0;
-padding: 0;
-float: right;
-border: none;
-position: relative;
+    margin: 0;
+    padding: 0;
+    float: right;
+    border: none;
+    position: relative;
 }
 
 .review .icon-ok,
 .review .icon-remove {
-position: absolute;
-right: 0;
+    position: absolute;
+    right: 0;
 }
 
 .review label i {
-font-size: 18px;
-text-shadow: 1px 1px #999;
-cursor:pointer;
-color: #ccc;
+    font-size: 18px;
+    text-shadow: 1px 1px #999;
+    cursor:pointer;
+    color: #ccc;
 }
 .review label.toggled i {
-color: gold;
-}
-
-.review form > input {
-display:none;
+    color: gold;
 }
 
 #content .search {
-float: right;
-margin: 0;
-position: relative;
-&:after {
-padding: 5px;
-font-size: 14px;
-position: absolute;
-content: "\f002";
-color: #bbb;
-top: 0;
-right: 0;
-}
+    float: right;
+    margin: 0;
+    position: relative;
+    &:after {
+    padding: 5px;
+    font-size: 14px;
+    font-family: "FontAwesome";
+    position: absolute;
+    content: "\f002";
+    color: #bbb;
+    top: 0;
+    right: 0;
+    }
 }
 .highlight {
-font-size: inherit;
-font-weight: inherit;
-background-color: gold;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: gold;
 }
 
 .room-description {
@@ -85,4 +89,40 @@ background-color: gold;
 .room-description + ul {
     padding-top: 10px;
     clear: both;
+}
+
+.review label i.fa {
+  font-family: "FontAwesome";
+}
+
+.review-stars label {
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.review-stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.review-stars input[type="radio"] {
+  display: none;
+}
+
+.review-stars label {
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.review-stars label:hover,
+.review-stars label:hover ~ label,
+.review-stars input[type="radio"]:checked + label,
+.review-stars input[type="radio"]:checked + label ~ label {
+  color: gold;
 }

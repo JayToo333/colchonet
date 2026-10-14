@@ -77,3 +77,5 @@ gem "carrierwave"
 gem "rmagick"
 
 gem "pg"
+
+gem "mini_magick"

@@ -33,7 +33,7 @@ pt-BR:
       edit: "Editar"
 
     _form:
-      submit: "Criar"
+      submit: "Enviar"
 
     index:
       title: "Quartos disponíveis"
@@ -52,8 +52,8 @@ pt-BR:
     
     review:
       stats:
-        one: '(1 avaliação)'
-        other: '(%{count} avaliações)'
+        one: "(1 avaliação)"
+        other: "(%{count} avaliações)"
 
   home:
     title: "Bem-vindo ao Colcho.net"

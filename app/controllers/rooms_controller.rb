@@ -5,11 +5,9 @@ class RoomsController < ApplicationController
     only: [ :new, :edit, :create, :update, :destroy ]
 
   def index
-   @search_query = params[:q]
-    rooms = Room.search(@search_query).
-      page(params[:page]).
-      per(PER_PAGE)
-      @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
+    @search_query = params[:q]
+    rooms = Room.search(@search_query).page(params[:page]).per(PER_PAGE)
+    @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
   end
 
   def new
@@ -31,11 +29,11 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
   end
 
   def update
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
     if @room.update(room_params)
       redirect_to @room, notice: t("flash.update.rooms")
     else
@@ -44,15 +42,10 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
     @room.destroy
 
     redirect_to rooms_url
-  end
-
-  if user_signed_in?
-    @user_review = @room.reviews.
-      find_or_initialize_by(user_id: current_user.id)
   end
 
   private
