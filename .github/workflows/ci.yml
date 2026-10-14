@@ -34,6 +34,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install ImageMagick dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagickwand-dev
+      
       - name: Checkout code
         uses: actions/checkout@v7
 
@@ -50,6 +55,11 @@ jobs:
     env:
       RUBOCOP_CACHE_ROOT: tmp/rubocop
     steps:
+      - name: Install ImageMagick dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagickwand-dev
+     
       - name: Checkout code
         uses: actions/checkout@v7
 
@@ -81,6 +91,11 @@ jobs:
     #      - 6379:6379
     #    options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
+      - name: Install ImageMagick dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagickwand-dev
+      
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libvips
 
@@ -109,6 +124,11 @@ jobs:
     #      - 6379:6379
     #    options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
+      - name: Install ImageMagick dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagickwand-dev
+      
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libvips
 
